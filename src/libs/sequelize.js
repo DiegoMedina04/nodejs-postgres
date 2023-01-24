@@ -3,10 +3,10 @@ const {Sequelize}= require('sequelize')
 const setupModels = require('./../db/index')
 const {config}= require('./../../src/config/config')
 
-const URI = config.uriDb;
+const URI = `postgres://${config.dbUser}:${config.dbPassword}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
 
 const sequelize = new Sequelize(URI, {
-  dialect :  'postgres',          //'postgres', //base de datos a la que se va a conectar
+  dialect :  'postgres',          
   loggin:true
 })
 setupModels(sequelize)

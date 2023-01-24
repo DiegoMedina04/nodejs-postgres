@@ -11,6 +11,9 @@ app.use(express.json())
 
 require('./src/utils/auth/index')
 
+app.get('/', (req, res)=>{
+  res.send('Hello word');
+})
 routerApi(app)
 
 app.use(errorLengs)
