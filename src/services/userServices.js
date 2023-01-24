@@ -59,8 +59,9 @@ class userServices {
 
   async updateUser(id, changes){
     try {
+
       const userUpdate = await this.findById(id)
-      return await userUpdate.update(changes)
+      return  await userUpdate.update(changes)
 
     } catch (error) {
       return boom.notFound(error)
